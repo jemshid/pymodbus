@@ -60,7 +60,7 @@ result  = client.write_registers(address, payload, skip_encode=True)
 #---------------------------------------------------------------------------# 
 address = 0x01
 count   = 8
-result  = client.read_input_registers(address, count)
+result  = client.read_holding_registers(address, count)
 decoder = BinaryPayloadDecoder.fromRegisters(result.registers, endian=Endian.Little)
 decoded = {
     'string': decoder.decode_string(8),
